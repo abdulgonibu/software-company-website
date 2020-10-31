@@ -4,24 +4,14 @@
 
 <div class="fixed">
 	<ul class="services-list">
-						<li>
-				<h3 class="sl-title">WEB DEVELOPMENT</h3>
-				<div class="sl-pic"><img src="{{asset('frontend/wp-content/uploads/2019/01/sl-pic-1.png')}}" width="128" height="128" alt=""/>
-				</div>
-				<p>Scalable and interactive web apps based on the latest trendy technologies and platforms to offer you high-quality IT solutions that might face any of your business challenges.</p>
-				<a href="{{route('wdevolopment')}}" class="" target="" rel="">Learn more</a>                </li>
-						<li>
-				<h3 class="sl-title">MOBILE DEVELOPMENT</h3>
-				<div class="sl-pic"><img src="{{asset('frontend/wp-content/uploads/2019/01/sl-pic-2.png')}}" width="128" height="128" alt=""/>
-				</div>
-				<p>Native and cross-platform mobile apps for iOS and Android to make your ideas a reality. We provide full cycle of services, starting from requirements specification to submitting the app on the App Store/Google Play.</p>
-				<a href="{{route('mdevolopment')}}" class="" target="" rel="">Learn more</a>                </li>
-						<li>
-				<h3 class="sl-title">DESKTOP DEVELOPMENT</h3>
-				<div class="sl-pic"><img src="{{asset('frontend/wp-content/uploads/2019/01/sl-pic-3.png')}}" width="128" height="128" alt=""/>
-				</div>
-				<p>Desktop apps development services for Windows and integration of the apps with other platforms and technologies. We are ready to meet the most challenging requirements from small businesses to large enterprises.</p>
-				<a href="{{route('ddevolopment')}}" class="" target="" rel="">Learn more</a>                </li>
+		          @foreach($portfolios as $portfolio)
+				           <li>
+						   <h3 class="sl-title">{{$portfolio->title}}</h3>
+							<div class="sl-pic"><img src="{{url('upload/portfolio_images/'.$portfolio->image)}}" width="128" height="128" alt=""/>
+							</div>
+							<p>{{$portfolio->short_title}}</p>
+							<a href="{{route('wdevolopment')}}" class="" target="" rel="">Learn more</a>                </li>
+				@endforeach
 				</ul>
 	<a href="{{route('software.devolopment.service')}}" class="all-link" target="" rel="">All services</a>    </div>
 <div class="blue-block">

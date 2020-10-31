@@ -28,10 +28,10 @@
             <div class="card">
               <div class="card-header">
                 <h3> Portfolio List
-                  @if($countBannar<1)
+                
                 	
                  <a class="btn btn-success float-right btn-sm" href="{{ route('portfolio.add')}}"><i class="fa fa-plus-circle"></i>Add Portfolio</a>
-              @endif
+          
                 </h3>
               </div><!-- /.card-body -->
               <div class="card-body">
@@ -54,9 +54,6 @@
                   <td>{{ $portfolio->title}}</td>
                   <td>{{ $portfolio->short_title}}</td>
                   <td><img src="{{(!empty($portfolio->image))?url('public/upload/portfolio_images/'.$portfolio->image):url('public/upload/no-image.png')}}" height="130px" width="120px"></td>
-                  
-                  
-
                   <td>
                   	<a href="{{ route('portfolio.edit',$portfolio->id)}}" class="btn btn-sm btn-primary" title="edit"><i class="fa fa-edit"></i></a>
                   	<a href="{{ route('portfolio.delete',$portfolio->id)}}" id="delete" class="btn btn-sm btn-danger" title="delete"><i class="fa fa-trash"></i></a>

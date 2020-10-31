@@ -1,6 +1,6 @@
 <header
 class="header"
-	style="background-image: url({{asset('frontend/wp-content/uploads/2019/04/lvivity_background.png')}})"
+	style="background-image: url({{asset('/upload/m_images/'.$banner->image)}})"
 >
 <div class="top-line">
 <div class="tl-flex">
@@ -42,9 +42,9 @@ class="header"
 </div>	</div>
 <div class="head-cont">
 <div class="fixed">
-	<div class="gen-pic"><img src="{{asset('frontend/wp-content/uploads/2019/04/m_logo.png')}}" width="838" height="644" alt=""/></div>
-	<h1 class="gen-title" style="color: #ffffff;">CUSTOM SOFTWARE DEVELOPMENT FOR BUSINESS</h1>
-	<div class="gen-text" style="color: #ffffff;">Your reliable technology partner for launching the greatest ideas</div>
+	<div class="gen-pic"><img src="{{url('/upload/m_images/'.$banner->image)}}" width="838" height="644" alt=""/></div>
+<h1 class="gen-title" style="color: #ffffff;">{{$banner->title}}</h1>
+	<div class="gen-text" style="color: #ffffff;">{{$banner->short_title}}</div>
 	<a href="{{route('contact.us')}}" class="btn-touch" target="" rel="">Get in touch</a>		</div>
 </div>
 </header>

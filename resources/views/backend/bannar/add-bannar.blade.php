@@ -42,20 +42,14 @@
                     <div class="form-group col-md-12">
               				<label for="title">Short Title</label>
                        <textarea type="text" name="short_title" class="form-control" id="title"></textarea>
-              			</div>
-
-              			<div class="form-group col-md-4">
-              				<label for="image">Backgroud Image</label>
-              				<input type="file" name="bannarimage" class="form-control" id="image">
-              			</div>
-                    	<div class="form-group col-md-4">
+                    </div>
+                    <div class="form-group col-md-4">
               				<label for="image"> Image</label>
               				<input type="file" name="image" class="form-control" id="image">
-              			</div>
+                    </div>
               			<div class="form-group col-md-2">
-              				<img id="showImage" src="{{ url('public/upload/no-image.png')}}" style="width: 150px; height: 160px;border: 1px solid #000">
+              				<img id="showImage" src="{{ url('/upload/no-image.png')}}" style="width: 150px; height: 160px;border: 1px solid #000">
               			</div>
-              			
               			<div class="form-group col-md-6">
               				<input type="submit" value="Submit" class="btn btn-primary">
               			</div>

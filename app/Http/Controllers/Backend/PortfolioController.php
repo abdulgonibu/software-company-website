@@ -59,11 +59,11 @@ public function update(Request $request, $id){
 }
 
 public function delete($id){
-        $mission = Portfolio::find($id);
+        $data = Portfolio::find($id);
         if (file_exists('public/upload/portfolio_images/' .$portfolio->image) AND ! empty($portfolio->image)) {
              unlink('public/upload/portfolio_images/' . $portfolio->image);
          }
-        $mission->delete();
+        $data->delete();
         return redirect()->route('portfolio.view')->with('success', 'Data deleted success');
 }
 }

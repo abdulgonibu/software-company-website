@@ -16,28 +16,23 @@ class BannarController extends Controller
     		$data['alldata'] = Banner::all();
     		return view('backend.bannar.bannar-view', $data);
 	}
-
   public function add(){
   	return view('backend.bannar.add-bannar');
   }
-
   public function store(Request $request){
   	$data = new Banner();
   	$data->created_by = Auth::user()->id;
       $data->title = $request->title;
-      $data->short_title = $request->short_title;
-      
+	  $data->short_title = $request->short_title;
   	if ($request->file('image')) {
   		$file = $request->file('image');
   		$filename =date('YmdHi').$file->getClientORiginalName();
-  		$file->move(public_path('upload/bannar_images'), $filename);
+  		$file->move(public_path('upload/m_images'), $filename);
   		$data['image'] = $filename;
   	    $data->save();
   	return redirect()->route('bannars.view')->with('success', 'Data add success');
   }
 }
-
-
 
   public function edit($id){
     $editData = Banner::find($id);
@@ -51,21 +46,21 @@ class BannarController extends Controller
     $data->short_title = $request->short_title;
   	if ($request->file('image')) {
   		$file = $request->file('image');
-  		@unlink(public_path('upload/bannar_images/'.$data->image));
+  		@unlink(public_path('upload/m_images/'.$data->image));
   		$filename =date('YmdHi').$file->getClientORiginalName();
-  		$file->move(public_path('upload/bannar_images'), $filename);
-          $data['image'] = $filename;
+  		$file->move(public_path('upload/m_images'), $filename);
+        $data['image'] = $filename;
   	 $data->save();
   	return redirect()->route('bannars.view')->with('success', 'Data update success');
   }
 }
   
   public function delete($id){
-       	$mission = Banner::find($id);
-       	if (file_exists('public/upload/bannar_images/' .$bannar->image) AND ! empty($bannar->image)) {
-    			unlink('public/upload/bannar_images/' . $bannar->image);
+       	$data = Banner::find($id);
+       	if (file_exists('public/upload/m_images/' .$data->image) AND ! empty($data->image)) {
+    			unlink('public/upload/m_images/' . $data->image);
     		}
-       	$mission->delete();
+       	$data->delete();
        	return redirect()->route('bannars.view')->with('success', 'Data deleted success');
   }
 }

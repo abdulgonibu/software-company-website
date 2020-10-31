@@ -11,7 +11,6 @@ class LogoController extends Controller
 {
     public function view(){
     	    $data['countlogo'] = Logo::count();
-    	  
     		$data['alldata'] = Logo::all();
     		return view('backend.logo.logo-view', $data);
 	}

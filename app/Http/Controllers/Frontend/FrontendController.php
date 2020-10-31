@@ -9,10 +9,11 @@ use App\Model\Slider;
 use App\Model\Contact;
 use App\Model\Mission;
 use App\Model\Vission;
-use App\Model\NewsEvent;
 use App\Model\Service;
 use App\Model\About;
 use App\Model\Communicate;
+use App\Model\Banner;
+use App\Model\Portfolio;
 use Mail;
 
 class FrontendController extends Controller
@@ -21,10 +22,10 @@ class FrontendController extends Controller
     	$data['logo']       = Logo::first();
     	$data['sliders']    = Slider::all();
         $data['contact']    = Contact::first();
-        $data['mission']    = Mission::first();
-        $data['vission']    = Vission::first();
-        $data['news_events']= NewsEvent::orderBy('id','desc')->get();
+        $data['banner']    = Banner::first();
+        $data['portfolios']   = Portfolio::all();
         $data['services']   = Service::all();
+       
     	return view('frontend.layouts.home', $data);
     }
 

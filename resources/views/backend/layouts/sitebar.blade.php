@@ -71,6 +71,24 @@
                    </ul>
               </li>
 
+              <li class="nav-item has-treeview {{($prefix=='/mlogos')?'menu-open':''}}">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                    Manage Medium Logo
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                 <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('mlogos.view')}}" class="nav-link {{ ($route=='mlogos.view')?'active':''}}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>View Medium Logo</p>
+                    </a>
+                   </li>
+                   </ul>
+              </li>
+
                <li class="nav-item has-treeview {{($prefix=='/sliders')?'menu-open':''}}">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-table"></i>

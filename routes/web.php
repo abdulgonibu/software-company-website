@@ -111,6 +111,15 @@ Route::prefix('logos')->group(function(){
 	route::get('/delete/{id}', 'Backend\LogoController@delete')->name('logos.delete');
 });
 
+Route::prefix('mlogos')->group(function(){
+	route::get('/view', 'Backend\MlogoController@view')->name('mlogos.view');
+	route::get('/add', 'Backend\MlogoController@add')->name('mlogos.add');
+	route::post('/store', 'Backend\MlogoController@store')->name('mlogos.store');
+	route::get('/edit/{id}', 'Backend\MlogoController@edit')->name('mlogos.edit');
+	route::post('/update/{id}', 'Backend\MlogoController@update')->name('mlogos.update');
+	route::get('/delete/{id}', 'Backend\MlogoController@delete')->name('mlogos.delete');
+});
+
 Route::prefix('sliders')->group(function(){
 	route::get('/view', 'Backend\sliderController@view')->name('sliders.view');
 	route::get('/add', 'Backend\sliderController@add')->name('sliders.add');

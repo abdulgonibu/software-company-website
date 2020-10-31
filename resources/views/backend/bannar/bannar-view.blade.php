@@ -41,9 +41,7 @@
                   <th>SL</th>
                   <th>Title</th>
                   <th>Short Title</th>
-                  <th>Bannar Image</th>
                   <th>Image</th>
-                  <th>Title</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -54,11 +52,7 @@
                   <td>{{$key+1}}</td>
                   <td>{{ $bannar->title}}</td>
                   <td>{{ $bannar->short_title}}</td>
-                  <td><img src="{{(!empty($bannar->bannarimage))?url('public/upload/backgroud_bannar_images/'.$bannar->bannarimage):url('public/upload/no-image.png')}}" height="130px" width="120px"></td>
-                  <td><img src="{{(!empty($bannar->image))?url('public/upload/bannar_images/'.$bannar->image):url('public/upload/no-image.png')}}" height="130px" width="120px"></td>
-                  
-                  
-
+                  <td><img src="{{(!empty($bannar->image))?url('public/upload/m_images/'.$bannar->image):url('public/upload/no-image.png')}}" height="130px" width="120px"></td>
                   <td>
                   	<a href="{{ route('bannars.edit',$bannar->id)}}" class="btn btn-sm btn-primary" title="edit"><i class="fa fa-edit"></i></a>
                   	<a href="{{ route('bannars.delete',$bannar->id)}}" id="delete" class="btn btn-sm btn-danger" title="delete"><i class="fa fa-trash"></i></a>
