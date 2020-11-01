@@ -51,12 +51,14 @@
 			<div class="title-text">Lvivity cooperates with small and medium businesses, large corporations, startups, and individuals all across the globe. And this is what our clients say about us.</div>
 			<div class="reviews-over">
 				<div class="reviews-slider">
+					@foreach($sliders as $slider)
 												<div>
+						
 							<div class="reviews-item">
 								<div class="ri-icon"><span class="icon-quote-left"></span></div>
-								<p>"Lvivity provided my company with outstanding technical skill and professional conduct in regards to expectations, timelines and deliverables. Lvivity helped me scale my product exponentially and has been a trusted partner in our efforts to release a truly fantastic product."</p>
+							<p>{{ $slider->long_title}}</p>
 								<div class="reviews-name">
-									<span> - Robert Mundinger Founder, TheMap   </span>                                 </div>
+									<span>{{ $slider->short_title}}</span>                                 </div>
 								<div class="reviews-info">
 									<div class="ri-pic"><img
 												src="{{asset('frontend/wp-content/themes/lvivity/assets/images/ri-pic.png')}}"
@@ -81,67 +83,9 @@
 								</div>
 							</div>
 						</div>
-												<div>
-							<div class="reviews-item">
-								<div class="ri-icon"><span class="icon-quote-left"></span></div>
-								<p>"Lvivity offers a development service unlike any other. Not only do they have an incredibly diverse skill set but their project management and creativity when it comes to complex problem solving separates them from any other developer's we have worked with. It takes a unique set of dev's to be able to think about the larger problems and then scale that problem back down to a dev solution. We will continue to partner with Lvivity to help us sustain and grow our business."</p>
-								<div class="reviews-name">
-									<span> - Patrick Kellenberger</span>CEO, SpreadIt                                    </div>
-								<div class="reviews-info">
-									<div class="ri-pic"><img
-												src="{{asset('frontend/wp-content/themes/lvivity/assets/images/ri-pic.png')}}"
-												width="86" height="92" alt=""/>
-									</div>
-									<div class="ri-cont">
-										<img src="{{asset('frontend/wp-content/themes/lvivity/assets/images/ri-cont.png')}}"
-											 width="95" height="27" alt=""/>
-																					<div class="rating">
-											<div class="vote-wrap">
-												<div class="vote-hover">
-													<div class="vote-block" style="height: 16px; width: 90px;">
-														<div class="vote-stars"
-															 style="height: 16px; width: 90px;"></div>
-														<div class="vote-active"
-															 style="height: 16px; width: 82.8px;"></div>
-													</div>
-												</div>
-											</div>
+						@endforeach
 										</div>
-										<a href="https://clutch.co/profile/lvivity#reviews" class="" target="_blank" rel="nofollow">View all reviews</a>                                        </div>
-								</div>
-							</div>
-						</div>
-												<div>
-							<div class="reviews-item">
-								<div class="ri-icon"><span class="icon-quote-left"></span></div>
-								<p>"We chose Lvivity because we we were looking for a partner that would be able to understand our complex requirements regarding both, high-end user interfaces and complex back-office requirements. Lvivity is constantly meeting our high expectations. We are reaching project goals in time, budget and quality. We are going to market based on a very trusted relationship."</p>
-								<div class="reviews-name">
-									<span> - Eckhard Ortwein</span>Managing Partner, 4-Ventures GmbH                                    </div>
-								<div class="reviews-info">
-									<div class="ri-pic"><img
-												src="{{asset('frontend/wp-content/themes/lvivity/assets/images/ri-pic.png')}}"
-												width="86" height="92" alt=""/>
-									</div>
-									<div class="ri-cont">
-										<img src="{{asset('frontend/wp-content/themes/lvivity/assets/images/ri-cont.png')}}"
-											 width="95" height="27" alt=""/>
-																					<div class="rating">
-											<div class="vote-wrap">
-												<div class="vote-hover">
-													<div class="vote-block" style="height: 16px; width: 90px;">
-														<div class="vote-stars"
-															 style="height: 16px; width: 90px;"></div>
-														<div class="vote-active"
-															 style="height: 16px; width: 90px;"></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<a href="https://clutch.co/profile/lvivity#reviews" class="" target="_blank" rel="nofollow">View all reviews</a>                                        </div>
-								</div>
-							</div>
-						</div>
-										</div>
+
 			</div>
 			<div class="relations-block">
 				<div class="relations-flex">
